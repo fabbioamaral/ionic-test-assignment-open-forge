@@ -1,0 +1,35 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      User/Search
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">User/Search</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-searchbar 
+    [(ngModel)]="userSearched"
+    [value]="userSearched"
+    animated placeholder="Search user"
+    (ionChange)="searchUser(userSearched)"
+    (ionCancel)="cleanSearchBar()"
+  >
+  </ion-searchbar>
+  <div class="user-info" *ngIf="user">
+    <ion-avatar>
+      <img [src]="user.avatarUrl">
+    </ion-avatar>
+    <h2><strong>{{ user.specifUserInfo.fullName ? user.specifUserInfo.fullName : ' - ' }}</strong></h2>
+    <p><strong>Bio: </strong>{{ user.specifUserInfo.bio ? user.specifUserInfo.bio : ' - ' }}</p>
+    <p><strong>Number of Public Repositories: </strong>{{ user.specifUserInfo.numberOfRepo }}</p>
+    <p><strong>Company: </strong>{{ user.specifUserInfo.company ? user.specifUserInfo.company : ' - '}}</p>
+    <p><strong>Location: </strong>{{ user.specifUserInfo.location ? user.specifUserInfo.location : ' - ' }}</p>
+    <p (click)="openWebsite(user.specifUserInfo.website)"><strong>Website/Blog: </strong>{{ user.specifUserInfo.website ? user.specifUserInfo.website : ' - '}}</p>
+  </div>
+</ion-content>

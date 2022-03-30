@@ -1,0 +1,7 @@
+{
+  "name": "test-assignment-open-forge",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

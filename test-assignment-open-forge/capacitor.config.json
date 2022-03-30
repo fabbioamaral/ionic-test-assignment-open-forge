@@ -1,0 +1,6 @@
+{
+	"appId": "io.ionic.starter",
+	"appName": "test-assignment-open-forge",
+	"webDir": "www",
+	"bundledWebRuntime": false
+}
